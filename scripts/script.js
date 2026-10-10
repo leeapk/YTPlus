@@ -1,6 +1,6 @@
 /*****YTPRO*******
 Author: Mr. Lee
-Version: 1.0.0
+Version: 4.0.0
 URI: https://github.com/leeapk/YTPlus
 Last Updated On: 11 Oct , 2026 , 02:57 UTC
 */
@@ -17,7 +17,7 @@ var script = document.createElement('script'); script.src="//youtube.com/ytpro_c
 if(!YTProVer){
 
 /*Few Stupid Inits*/
-var YTProVer="1.0";
+var YTProVer="4.0";
 var ytoldV="";
 var isF=false;   //what is this for?
 var isAp=false; // oh it's for bg play 
