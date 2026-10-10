@@ -1,7 +1,7 @@
-/*****YTPRO*******
-Author: Prateek Chaubey
-Version: 3.9.2
-URI: https://github.com/prateek-chaubey/YTPRO
+/*****YTPLUS*******
+Author: Mr. Lee
+Version: 1.0.0
+URI: https://github.com/leeapk/YTPlus
 */
 
 if (typeof MediaMetadata === 'undefined') {
