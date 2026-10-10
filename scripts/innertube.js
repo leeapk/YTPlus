@@ -1,8 +1,8 @@
-/*****YTPRO*******
-Author: Prateek Chaubey
-Version: 4.0.0
-URI: https://github.com/prateek-chaubey/YTPRO
-Last Updated On: 19 Sep , 2026 , 07:11 IST
+/*****YTPLUS*******
+Author: Mr. Lee
+Version: 1.0.0
+URI: https://github.com/leeapk/YTPlus
+Last Updated On: 11 Oct , 2026 , 03:15 UTC
 */
 
 
