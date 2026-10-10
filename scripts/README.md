@@ -1,15 +1,15 @@
 
 <p align="center">
-<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ytpro.gif' height=150  >
+<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ytpro.gif' height=150  >
 </p>
 <h1 align=center>YT PRO </h1>
 
 <div align="center">
 
 
-[![Gradle](https://github.com/prateek-chaubey/YTPro/actions/workflows/gradle.yml/badge.svg)](https://github.com/prateek-chaubey/YTPro/actions/workflows/gradle.yml)
+[![Gradle](https://github.com/leeapk/YTPlus/actions/workflows/gradle.yml/badge.svg)](https://github.com/leeapk/YTPlus/actions/workflows/gradle.yml)
 <a href="https://www.jsdelivr.com/package/npm/ytpro?tab=stats" ><img alt="jsDelivr monthly hits badge" src="https://data.jsdelivr.com/v1/package/npm/ytpro/badge"></a>
-<img src=https://img.shields.io/github/downloads/prateek-chaubey/YTPro/total >
+<img src=https://img.shields.io/github/downloads/leeapk/YTPlus/total >
 
 </div>
 
@@ -21,17 +21,17 @@
 
 ## Download YT PRO
 
-[![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-ff0000?style=for-the-badge&logo=download&logoColor=white "Download Apk")](https://nightly.link/prateek-chaubey/YTPro/workflows/gradle/main/YTPRO.zip)
+[![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-ff0000?style=for-the-badge&logo=download&logoColor=white "Download Apk")](https://nightly.link/leeapk/YTPlus/workflows/gradle/main/YTPRO.zip)
 
 #### Screenshots
 | | | |
 |:--:|:--:|:--:| 
-|<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen3.jpg'  > | <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen2.jpg'  > |<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen5.jpg'  > | 
-|<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen6.jpg'  > | <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen4.jpg'  > |<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/screen1.jpg'  > |
+|<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen3.jpg'  > | <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen2.jpg'  > |<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen5.jpg'  > | 
+|<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen6.jpg'  > | <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen4.jpg'  > |<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/screen1.jpg'  > |
 
 
 ## Features
- * <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/gemini-logo-13486188-10900314-unscreen-ezgif.com-crop.gif' height=15 width=15 > Google Gemini
+ * <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/gemini-logo-13486188-10900314-unscreen-ezgif.com-crop.gif' height=15 width=15 > Google Gemini
    * Summarise Vidoes
    * Customisable prompts and models
  * Video Downloader
@@ -73,9 +73,9 @@ The available variables for gemini prompt are
  * [YouTube.js](https://github.com/LuanRT/YouTube.js/)
 
 ### ❤️Supporters❤️
-[![Stargazers repo roster for @prateek-chaubey/YTPro](http://reporoster.com/stars/dark/prateek-chaubey/YTPro)](https://github.com/prateek-chaubey/YTPro/stargazers)
+[![Stargazers repo roster for @leeapk/YTPlus](http://reporoster.com/stars/dark/leeapk/YTPlus)](https://github.com/leeapk/YTPlus/stargazers)
      
-[![Forkers repo roster for @prateek-chaubey/YTPro](http://reporoster.com/forks/dark/prateek-chaubey/YTPro)](https://github.com/prateek-chaubey/YTPro/network/members)
+[![Forkers repo roster for @leeapk/YTPlus](http://reporoster.com/forks/dark/leeapk/YTPlus)](https://github.com/leeapk/YTPlus/network/members)
 
 
 ## Disclaimer 
