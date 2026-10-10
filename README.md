@@ -1,37 +1,37 @@
 <p align="center">
-<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ytpro.gif' height=150  >
+<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ytpro.gif' height=150  >
 </p>
 <h1 align=center>YT PRO </h1>
 
 <div align="center">
 
 
-[![Gradle](https://github.com/prateek-chaubey/YTPro/actions/workflows/gradle.yml/badge.svg)](https://github.com/prateek-chaubey/YTPro/actions/workflows/gradle.yml)
+[![Gradle](https://github.com/leeapk/YTPlus/actions/workflows/gradle.yml/badge.svg)](https://github.com/leeapk/YTPlus/actions/workflows/gradle.yml)
 <a href="https://www.jsdelivr.com/package/npm/ytpro?tab=stats" ><img alt="jsDelivr monthly hits badge" src="https://data.jsdelivr.com/v1/package/npm/ytpro/badge"></a>
-<img src=https://img.shields.io/github/downloads/prateek-chaubey/YTPro/total >
+<img src=https://img.shields.io/github/downloads/leeapk/YTPlus/total >
 
 </div>
 
 ### Become a Sponsor 
 ---
 > [!TIP]
-> If you like this project, consider [sponsoring](https://github.com/sponsors/prateek-chaubey) to support the author 🙁
+> If you like this project, consider [sponsoring](https://t.me/leeapk) to support the author 🙁
 ---
 
-## Download YT PRO
+## Download YT PLUS
 
-<a href="https://github.com/prateek-chaubey/YTPro/releases/latest"><img src="https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/githubapk.png" height=70></a>
-<a href="https://nightly.link/prateek-chaubey/YTPro/workflows/gradle/main/YTPRO.zip"><img src="https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/nightlyapk.png" height=80></a>
+<a href="https://github.com/leeapk/YTPlus/releases/latest"><img src="https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/githubapk.png" height=70></a>
+<a href="https://nightly.link/leeapk/YTPlus/workflows/gradle/main/YTPRO.zip"><img src="https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/nightlyapk.png" height=80></a>
 
 #### Screenshots
 | | | |
 |:--:|:--:|:--:| 
-|<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss1.png'  > | <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss5.png'  > |<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss2.png'  > | 
-|<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss4.png'  > | <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss3.png'  > |<img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/ss6.png'  > |
+|<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss1.png'  > | <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss5.png'  > |<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss2.png'  > | 
+|<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss4.png'  > | <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss3.png'  > |<img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/ss6.png'  > |
 
 
 ## Features
- * <img src='https://raw.githubusercontent.com/prateek-chaubey/YTPro/main/.github/img/gemini-logo-13486188-10900314-unscreen-ezgif.com-crop.gif' height=15 width=15 > Google Gemini
+ * <img src='https://raw.githubusercontent.com/leeapk/YTPlus/main/.github/img/gemini-logo-13486188-10900314-unscreen-ezgif.com-crop.gif' height=15 width=15 > Google Gemini
    * Summarise Vidoes
    * Customisable prompts and models
  * Video Downloader
@@ -75,9 +75,9 @@ The available variables for gemini prompt are
  * [YouTube.js](https://github.com/LuanRT/YouTube.js/)
 
 ### ❤️Supporters❤️
-[![Stargazers repo roster for @prateek-chaubey/YTPro](http://reporoster.com/stars/dark/prateek-chaubey/YTPro)](https://github.com/prateek-chaubey/YTPro/stargazers)
+[![Stargazers repo roster for @leeapk/YTPlus](http://reporoster.com/stars/dark/leeapk/YTPlus)](https://github.com/leeapk/YTPlus/stargazers)
      
-[![Forkers repo roster for @prateek-chaubey/YTPro](http://reporoster.com/forks/dark/prateek-chaubey/YTPro)](https://github.com/prateek-chaubey/YTPro/network/members)
+[![Forkers repo roster for @leeapk/YTPlus](http://reporoster.com/forks/dark/leeapk/YTPlus)](https://github.com/leeapk/YTPlus/network/members)
 
 
 ## Disclaimer 
