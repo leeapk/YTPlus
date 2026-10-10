@@ -1,6 +1,6 @@
 /*****YTPLUS*******
 Author: Mr. Lee
-Version: 1.0.0
+Version: 4.0.0
 URI: https://github.com/leeapk/YTPlus
 */
 
