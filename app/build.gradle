@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.google.android.youtube.plus"  
+    namespace "com.google.android.youtube.pro"  
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.google.android.youtube.plus"
+        applicationId "com.google.android.youtube.pro"
         minSdkVersion 21
         targetSdkVersion 36
         versionCode 1
