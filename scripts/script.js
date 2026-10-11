@@ -1652,12 +1652,22 @@ try{
   if(!oldWrap){
     var wrap = document.createElement("div");
     wrap.id = "ytproLDWrap";
+    // FIX: flex-shrink:0; add kora hoyeche jate wrap ta chuto na hoy
     wrap.style.cssText = "
           display:inline-flex;
           align-items:center;
           gap:8px;
+          flex-shrink:0;
           ";
     var parent = likeBtn.parentElement;
+    
+    // FIX: Parent ke scrollable kora hoyeche jate baki button gulo hide na hoy
+    if(parent) {
+        parent.style.overflowX = "auto";
+        parent.style.flexWrap = "nowrap";
+        parent.style.scrollbarWidth = "none";
+    }
+    
     parent.insertBefore(wrap, likeBtn);
     wrap.appendChild(likeBtn);
     wrap.appendChild(dislikeBtn);
