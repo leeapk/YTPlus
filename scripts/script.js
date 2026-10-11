@@ -1641,60 +1641,34 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 
 
 try{
-  var oldBar = document.getElementById("ytproLikeDislikeBar");
-  if(oldBar) oldBar.remove();
-  var oldLike = document.getElementById("ytproLikeNum");
-  if(oldLike) oldLike.remove();
-  var oldDislike = document.getElementById("ytproDislikeNum");
-  if(oldDislike) oldDislike.remove();
-
-  var likeBtn = document.querySelector("like-button-view-model");
-  var dislikeBtn = document.querySelector("dislike-button-view-model");
-
-  if(likeBtn && dislikeBtn){
-    var wrap = document.getElementById("ytproLDWrap");
-    if(!wrap){
-      wrap = document.createElement("div");
-      wrap.id = "ytproLDWrap";
-      wrap.style.cssText = `
-        display:inline-flex;
-        align-items:center;
-        background:rgba(255,255,255,0.12);
-        border-radius:35px;
-        padding:0px 16px 0px 16px;
-      `;
-
-      var parent = likeBtn.parentElement;
-      parent.insertBefore(wrap, likeBtn);
-      wrap.appendChild(likeBtn);
-      wrap.appendChild(dislikeBtn);
-    }
-
-    // Like Number
+  // Like count
+  var likeBtn = document.querySelector("like-button-view-model button") || document.querySelector("like-button-view-model");
+  if(likeBtn){
     var likeCountEl = document.getElementById("ytproLikeNum");
     if(!likeCountEl){
       likeCountEl = document.createElement("span");
       likeCountEl.id = "ytproLikeNum";
-      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-right:4px;";
-      var likeInner = likeBtn.querySelector("button") || likeBtn;
-      likeInner.appendChild(likeCountEl);
+      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:6px;margin-right:10px;padding:0 2px;";
+      likeBtn.appendChild(likeCountEl);
     }
     likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
+  }
 
-    // Dislike Number
+  // Dislike count
+  var dislikeBtn = document.querySelector("dislike-button-view-model button") || document.querySelector("dislike-button-view-model");
+  if(dislikeBtn){
     var dislikeCountEl = document.getElementById("ytproDislikeNum");
     if(!dislikeCountEl){
       dislikeCountEl = document.createElement("span");
       dislikeCountEl.id = "ytproDislikeNum";
-      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:12px;margin-right:4px;";
-      var dislikeInner = dislikeBtn.querySelector("button") || dislikeBtn;
-      dislikeInner.appendChild(dislikeCountEl);
+      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:6px;margin-right:4px;padding:0 2px;";
+      dislikeBtn.appendChild(dislikeCountEl);
     }
     dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
   }
-    
-/*  var oldBar = document.getElementById("ytproLikeDislikeBar");
-  if(oldBar) oldBar.remove(); */
+
+  var oldBar = document.getElementById("ytproLikeDislikeBar");
+  if(oldBar) oldBar.remove();
 }catch(e){}
     
 
