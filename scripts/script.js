@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 16:32 UTC
+Last Updated On: 11 Oct , 2026 , 17:03 UTC
 */
 
 
@@ -1710,44 +1710,61 @@ try{
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
 
+  // Parent row ke swipeable korar jonno CSS inject
+  if(!document.getElementById("ytproSwipeStyle")){
+    var style = document.createElement("style");
+    style.id = "ytproSwipeStyle";
+    style.innerHTML = "#top-row, #actions, .ytm-top-row { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; scrollbar-width: none !important; } #top-row::-webkit-scrollbar, #actions::-webkit-scrollbar { display: none !important; }";
+    document.head.appendChild(style);
+  }
+
   if(!document.getElementById("ytproLikeDislikeBar")){
     
     var bar = document.createElement("div");
     bar.id = "ytproLikeDislikeBar";
-    // Custom bar er style
-    bar.style.cssText = "display:inline-flex; align-items:center; gap:6px; background:rgba(128,128,128,0.2); border-radius:20px; padding:4px 10px; margin-left:6px; font-size:13px; font-weight:600;";
+    // Custom background/padding shob remove kora hoyeche
+    bar.style.cssText = "display:inline-flex; align-items:center; gap:8px; margin:0 6px; flex-shrink:0;";
 
+    // Orijinal button gulo ke custom bar e move kora
     likeBtn.parentElement.insertBefore(bar, likeBtn);
     bar.appendChild(likeBtn);
     bar.appendChild(dislikeBtn);
 
+    // Orijinal button er background remove kora ebong layout row kora
     likeBtn.style.setProperty("background", "transparent", "important");
     likeBtn.style.setProperty("padding", "0", "important");
     likeBtn.style.setProperty("margin", "0", "important");
-    
+    likeBtn.style.setProperty("display", "inline-flex", "important");
+    likeBtn.style.setProperty("flex-direction", "row", "important");
+    likeBtn.style.setProperty("align-items", "center", "important");
+
     dislikeBtn.style.setProperty("background", "transparent", "important");
     dislikeBtn.style.setProperty("padding", "0", "important");
     dislikeBtn.style.setProperty("margin", "0", "important");
+    dislikeBtn.style.setProperty("display", "inline-flex", "important");
+    dislikeBtn.style.setProperty("flex-direction", "row", "important");
+    dislikeBtn.style.setProperty("align-items", "center", "important");
 
+    // Like count
     var likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikesCount";
-    likeCountEl.style.cssText = "margin-left:4px;";
+    likeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:13px; font-weight:600;";
     likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
-    likeBtn.appendChild(likeCountEl); // Like button er pashe count
+    likeBtn.appendChild(likeCountEl);
 
+    // Dislike count
     var dislikeCountEl = document.createElement("span");
     dislikeCountEl.id = "ytproDislikesCount";
-    dislikeCountEl.style.cssText = "margin-left:4px;";
+    dislikeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:13px; font-weight:600;";
     dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
-    dislikeBtn.appendChild(dislikeCountEl); // Dislike button er pashe count
+    dislikeBtn.appendChild(dislikeCountEl);
 
   } else {
-    if(document.getElementById("ytproLikesCount")) {
-        document.getElementById("ytproLikesCount").innerText = (likes && likes !== "...") ? likes : "";
-    }
-    if(document.getElementById("ytproDislikesCount")) {
-        document.getElementById("ytproDislikesCount").innerText = (dislikes && dislikes !== "...") ? dislikes : "";
-    }
+    // Count update koro
+    var lc = document.getElementById("ytproLikesCount");
+    var dc = document.getElementById("ytproDislikesCount");
+    if(lc) lc.innerText = (likes && likes !== "...") ? likes : "";
+    if(dc) dc.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
   }
 }catch(e){}
 
