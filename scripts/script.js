@@ -1660,7 +1660,7 @@ try{
         display:inline-flex;
         align-items:center;
         background:rgba(255,255,255,0.12);
-        border-radius:50%;
+        border-radius:20px 0 0 20px;
         padding:4px 4px;
         margin:0 4px;
         gap:2px;
