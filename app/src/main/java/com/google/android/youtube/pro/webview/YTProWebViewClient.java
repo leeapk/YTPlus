@@ -185,9 +185,9 @@ public class YTProWebViewClient extends WebViewClient {
 	@Override
 	public void onPageFinished(WebView view, String url) {
 		web.evaluateJavascript("if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {window.trustedTypes.createPolicy('default', {createHTML: (string) => string,createScriptURL: string => string, createScript: string => string, });}", null);
-		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@63b3043669f71a45666245db62e5fc3d45a7004c/scripts/script.js'; document.body.appendChild(script);  })();", null);
-		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@a2e5a099116d61c18931e52322813716893c9ee1/scripts/bgplay.js'; document.body.appendChild(script);  })();", null);
-		web.evaluateJavascript("(function () { var script = document.createElement('script');script.type='module';script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@554047a2923ca90ee1fb83884b6c7fb956841f93/scripts/innertube.js'; document.body.appendChild(script);  })();", null);
+		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@main/scripts/script.js'; document.body.appendChild(script);  })();", null);
+		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@main/scripts/bgplay.js'; document.body.appendChild(script);  })();", null);
+		web.evaluateJavascript("(function () { var script = document.createElement('script');script.type='module';script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@main/scripts/innertube.js'; document.body.appendChild(script);  })();", null);
 		
 		
 		if (!url.contains("youtube.com/watch") && !url.contains("youtube.com/shorts") && activity.isPlaying) {
