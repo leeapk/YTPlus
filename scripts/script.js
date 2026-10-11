@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 19:22 UTC
+Last Updated On: 11 Oct , 2026 , 19:29 UTC
 */
 
 
@@ -1656,7 +1656,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
   if(!likeCountEl){
     likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikeNum";
-    likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
+    likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;margin-left:6px;letter-spacing:0.2px;";
     likeInner.appendChild(likeCountEl);
   }
   likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
