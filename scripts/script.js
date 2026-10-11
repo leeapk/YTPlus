@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 19:29 UTC
+Last Updated On: 11 Oct , 2026 , 21:07 UTC
 */
 
 
@@ -1640,7 +1640,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }catch(e){} */
     
 
- try{
+/* try{
   var oldBar = document.getElementById("ytproLikeDislikeBar");
   if(oldBar) oldBar.remove();
   
@@ -1672,7 +1672,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
 
-}catch(e){} 
+}catch(e){} */
     
 
 /* try{
@@ -1705,7 +1705,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }catch(e){} */
 
 
-/* try{
+ try{
   var likeBtn = document.querySelector("like-button-view-model");
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
@@ -1723,7 +1723,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
     var bar = document.createElement("div");
     bar.id = "ytproLikeDislikeBar";
     // Custom background/padding shob remove kora hoyeche
-    bar.style.cssText = "display:inline-flex; align-items:center; gap:8px; margin:0 6px; flex-shrink:0;";
+    bar.style.cssText = "display:inline-flex; align-items:center; gap:6px; margin:0 6px; flex-shrink:0;";
 
     // Orijinal button gulo ke custom bar e move kora
     likeBtn.parentElement.insertBefore(bar, likeBtn);
@@ -1748,14 +1748,14 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
     // Like count
     var likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikesCount";
-    likeCountEl.style.cssText = "margin-left:2px; white-space:nowrap; font-size:14px; font-weight:600;";
+    likeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:14px; font-weight:600;";
     likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
     likeBtn.appendChild(likeCountEl);
 
     // Dislike count
     var dislikeCountEl = document.createElement("span");
     dislikeCountEl.id = "ytproDislikesCount";
-    dislikeCountEl.style.cssText = "margin-left:2px; white-space:nowrap; font-size:14px; font-weight:600;";
+    dislikeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:14px; font-weight:600;";
     dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
     dislikeBtn.appendChild(dislikeCountEl);
 
@@ -1766,7 +1766,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
     if(lc) lc.innerText = (likes && likes !== "...") ? likes : "";
     if(dc) dc.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
   }
-}catch(e){} */
+}catch(e){}
 
 
 //Volume and brightness slider 
