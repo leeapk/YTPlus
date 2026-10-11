@@ -1638,9 +1638,9 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }
 
 }catch(e){} */
+    
 
-
-try{
+/* try{
   var oldBar = document.getElementById("ytproLikeDislikeBar");
   if(oldBar) oldBar.remove();
   
@@ -1672,8 +1672,90 @@ try{
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
 
-}catch(e){}
+}catch(e){} */
     
+
+/* try{
+  if(!document.getElementById("ytproLikeDislikeBar")){
+    var bar = document.createElement("div");
+    bar.id = "ytproLikeDislikeBar";
+    bar.style.cssText = `
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(128,128,128,0.2);border-radius:20px;
+      padding:4px 10px;margin-left:6px;font-size:13px;font-weight:600;
+    `;
+    bar.innerHTML = `
+      <span style="display:inline-flex;align-items:center;gap:4px;">
+        👍 <span id="ytproLikesCount">${likes}</span>
+      </span>
+      <span style="opacity:0.5;">|</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;">
+        👎 <span id="ytproDislikesCount">${dislikes}</span>
+      </span>
+    `;
+
+    var likeBtn = document.querySelector("like-button-view-model");
+    if(likeBtn){
+      likeBtn.parentElement.insertBefore(bar, likeBtn.nextSibling);
+    }
+  }else{
+    document.getElementById("ytproLikesCount").innerText = likes;
+    document.getElementById("ytproDislikesCount").innerText = dislikes;
+  }
+}catch(e){} */
+
+
+try{
+  var likeBtn = document.querySelector("like-button-view-model");
+  var dislikeBtn = document.querySelector("dislike-button-view-model");
+  if(!likeBtn || !dislikeBtn) return;
+
+  if(!document.getElementById("ytproLikeDislikeBar")){
+    
+    // YouTube er original SVG paths
+    var likeSvg = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events: none; display: block; width: 22px; height: 22px; fill: currentColor;"><path d="M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z M7,20H4v-8h3V20z M19.98,13.17l-1.34,6 C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3 c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z"></path></svg>';
+    
+    var dislikeSvg = '<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events: none; display: block; width: 22px; height: 22px; fill: currentColor;"><path d="M17,4h-1H6.57C5.5,4,4.59,4.67,4.38,5.61l-1.34,6C2.77,12.85,3.82,14,5.23,14h4.23l-1.52,4.94C7.62,19.97,8.46,21,9.62,21 c0.58,0,1.14-0.24,1.52-0.65L17,14h4V4H17z M19,13h-3v-8h3V13z M15.31,7.44L9.71,13.5C9.42,13.82,9.14,13.95,8.84,13.95 c-0.26,0-0.5-0.11-0.63-0.3c-0.07-0.1-0.15-0.26-0.09-0.47l1.52-4.94L10.82,6h-1.35H5.23c-0.41,0-0.8-0.17-1.03-0.46 C4.08,5.39,3.95,5.14,4.02,4.83l1.34-6C5.46,4.35,5.97,4,6.57,4H16v8.61l-5.6,6.06c-0.19,0.21-0.48,0.33-0.78,0.33"></path></svg>';
+
+    var bar = document.createElement("div");
+    bar.id = "ytproLikeDislikeBar";
+    bar.style.cssText = `
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(128,128,128,0.2);border-radius:20px;
+      padding:4px 10px;margin-left:6px;font-size:13px;font-weight:600;
+    `;
+    
+    bar.innerHTML = `
+      <span id="ytproLikeClick" style="display:inline-flex;align-items:center;cursor:pointer;">
+        ${likeSvg} <span id="ytproLikesCount" style="margin-left:4px;">${likes}</span>
+      </span>
+      <span style="opacity:0.5;">|</span>
+      <span id="ytproDislikeClick" style="display:inline-flex;align-items:center;cursor:pointer;">
+        ${dislikeSvg} <span id="ytproDislikesCount" style="margin-left:4px;">${dislikes}</span>
+      </span>
+    `;
+
+    likeBtn.parentElement.insertBefore(bar, likeBtn);
+
+    // Orijinal button duita ke hide kora holo jate double icon na dekhay
+    likeBtn.style.display = 'none';
+    dislikeBtn.style.display = 'none';
+
+    // Kustom bar e click korle jate like/dislike kaj kore
+    document.getElementById("ytproLikeClick").addEventListener("click", function() {
+      var btn = likeBtn.querySelector("button");
+      if(btn) btn.click();
+    });
+    document.getElementById("ytproDislikeClick").addEventListener("click", function() {
+      var btn = dislikeBtn.querySelector("button");
+      if(btn) btn.click();
+    });
+
+  } else {
+    document.getElementById("ytproLikesCount").innerText = likes;
+    document.getElementById("ytproDislikesCount").innerText = dislikes;
+  }
+}catch(e){}
 
 
 //Volume and brightness slider 
