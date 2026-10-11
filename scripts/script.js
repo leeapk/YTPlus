@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 21:07 UTC
+Last Updated On: 11 Oct , 2026 , 23:53 UTC
 */
 
 
@@ -1619,7 +1619,7 @@ async function pkc(){
 if(window.location.href.indexOf("youtube.com/watch") > -1){
 
 
-/*try{
+try {
 var elm=document.getElementsByTagName("dislike-button-view-model")[0].children[0]; 
 elm.children[0].children[0].style.width="auto";
 elm.children[0].children[0].style.paddingRight="15px";
@@ -1637,80 +1637,14 @@ insertAfter(document.getElementsByClassName("slim-video-information-like-count")
 document.getElementById("diskl").innerHTML=dislikesHtml;
 }
 
-}catch(e){} */
-    
+}catch(e){}
+
 
 /* try{
-  var oldBar = document.getElementById("ytproLikeDislikeBar");
-  if(oldBar) oldBar.remove();
-  
   var likeBtn = document.querySelector("like-button-view-model");
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
 
-  // Wrapper and styling block removed as requested
-
-  // Like count
-  var likeInner = likeBtn.querySelector("button") || likeBtn;
-  var likeCountEl = document.getElementById("ytproLikeNum");
-  if(!likeCountEl){
-    likeCountEl = document.createElement("span");
-    likeCountEl.id = "ytproLikeNum";
-    likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;margin-left:6px;letter-spacing:0.2px;";
-    likeInner.appendChild(likeCountEl);
-  }
-  likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
-
-  // Dislike count
-  var dislikeInner = dislikeBtn.querySelector("button") || dislikeBtn;
-  var dislikeCountEl = document.getElementById("ytproDislikeNum");
-  if(!dislikeCountEl){
-    dislikeCountEl = document.createElement("span");
-    dislikeCountEl.id = "ytproDislikeNum";
-    dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
-    dislikeInner.appendChild(dislikeCountEl);
-  }
-  dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
-
-}catch(e){} */
-    
-
-/* try{
-  if(!document.getElementById("ytproLikeDislikeBar")){
-    var bar = document.createElement("div");
-    bar.id = "ytproLikeDislikeBar";
-    bar.style.cssText = `
-      display:inline-flex;align-items:center;gap:6px;
-      background:rgba(128,128,128,0.2);border-radius:20px;
-      padding:4px 10px;margin-left:6px;font-size:13px;font-weight:600;
-    `;
-    bar.innerHTML = `
-      <span style="display:inline-flex;align-items:center;gap:4px;">
-        👍 <span id="ytproLikesCount">${likes}</span>
-      </span>
-      <span style="opacity:0.5;">|</span>
-      <span style="display:inline-flex;align-items:center;gap:4px;">
-        👎 <span id="ytproDislikesCount">${dislikes}</span>
-      </span>
-    `;
-
-    var likeBtn = document.querySelector("like-button-view-model");
-    if(likeBtn){
-      likeBtn.parentElement.insertBefore(bar, likeBtn.nextSibling);
-    }
-  }else{
-    document.getElementById("ytproLikesCount").innerText = likes;
-    document.getElementById("ytproDislikesCount").innerText = dislikes;
-  }
-}catch(e){} */
-
-
- try{
-  var likeBtn = document.querySelector("like-button-view-model");
-  var dislikeBtn = document.querySelector("dislike-button-view-model");
-  if(!likeBtn || !dislikeBtn) return;
-
-  // Parent row ke swipeable korar jonno CSS inject
   if(!document.getElementById("ytproSwipeStyle")){
     var style = document.createElement("style");
     style.id = "ytproSwipeStyle";
@@ -1722,15 +1656,11 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
     
     var bar = document.createElement("div");
     bar.id = "ytproLikeDislikeBar";
-    // Custom background/padding shob remove kora hoyeche
     bar.style.cssText = "display:inline-flex; align-items:center; gap:6px; margin:0 6px; flex-shrink:0;";
-
-    // Orijinal button gulo ke custom bar e move kora
     likeBtn.parentElement.insertBefore(bar, likeBtn);
     bar.appendChild(likeBtn);
     bar.appendChild(dislikeBtn);
 
-    // Orijinal button er background remove kora ebong layout row kora
     likeBtn.style.setProperty("background", "transparent", "important");
     likeBtn.style.setProperty("padding", "0", "important");
     likeBtn.style.setProperty("margin", "0", "important");
@@ -1766,7 +1696,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
     if(lc) lc.innerText = (likes && likes !== "...") ? likes : "";
     if(dc) dc.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
   }
-}catch(e){}
+}catch(e){} */
 
 
 //Volume and brightness slider 
