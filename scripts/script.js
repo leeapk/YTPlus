@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 13:46 UTC
+Last Updated On: 11 Oct , 2026 , 16:16 UTC
 */
 
 
@@ -1649,65 +1649,13 @@ try{
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
 
-  // Style inject korchi jate pura line ta swipeable hoy
-  if(!document.getElementById("ytproLDStyle")){
-    var style = document.createElement("style");
-    style.id = "ytproLDStyle";
-    style.innerHTML = "
-      /* Pura action row ke swipeable korar jonno */
-      #top-row, #actions, .ytm-top-row, .ytm-actions, ytm-watch-metadata #top-row {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-        white-space: nowrap !important;
-        scrollbar-width: none !important; /* Firefox */
-        width: 100% !important;
-        max-width: 100vw !important;
-        align-items: center !important;
-        box-sizing: border-box !important;
-        padding-bottom: 4px !important;
-      }
-      
-      /* Scrollbar hide korar jonno */
-      #top-row::-webkit-scrollbar, 
-      #actions::-webkit-scrollbar, 
-      .ytm-top-row::-webkit-scrollbar {
-        display: none !important;
-      }
-
-      /* Elements jate chuto na hoye jay */
-      .ytm-channel-info, 
-      .ytm-subscribe-button, 
-      like-button-view-model, 
-      dislike-button-view-model, 
-      #ytproLDWrap {
-        flex-shrink: 0 !important;
-      }
-    ";
-    document.head.appendChild(style);
-  }
-
   if(!oldWrap){
     var wrap = document.createElement("div");
     wrap.id = "ytproLDWrap";
     wrap.style.cssText = "
           display:inline-flex;
           align-items:center;
-          justify-content:center;
-          background: var(--yt-spec-badge-chip-background, rgba(128,128,128,0.15));
-          color: var(--yt-spec-text-primary, inherit);
-          height: 36px;
-          min-height: 36px;
-          border-radius: 18px;
-          padding: 0 16px;
-          margin: 0 6px;
-          gap: 8px;
-          font-family: "Roboto","Arial",sans-serif;
-          flex-shrink: 0;
-          white-space: nowrap;
-          box-sizing: border-box;
+          gap:8px;
           ";
     var parent = likeBtn.parentElement;
     parent.insertBefore(wrap, likeBtn);
@@ -1721,7 +1669,7 @@ try{
   if(!likeCountEl){
     likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikeNum";
-    likeCountEl.style.cssText = "font-size:12px; font-weight:500; margin-left:4px; letter-spacing:0.2px; white-space:nowrap; line-height:normal;";
+    likeCountEl.style.cssText = "font-size:14px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
     likeInner.appendChild(likeCountEl);
   }
   likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
@@ -1732,7 +1680,7 @@ try{
   if(!dislikeCountEl){
     dislikeCountEl = document.createElement("span");
     dislikeCountEl.id = "ytproDislikeNum";
-    dislikeCountEl.style.cssText = "font-size:12px; font-weight:200; margin-left:4px; letter-spacing:0.2px; white-space:nowrap; line-height:normal;";
+    dislikeCountEl.style.cssText = "font-size:14px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
     dislikeInner.appendChild(dislikeCountEl);
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
