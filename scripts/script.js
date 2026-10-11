@@ -1640,7 +1640,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }catch(e){} */
     
 
-/* try{
+ try{
   var oldBar = document.getElementById("ytproLikeDislikeBar");
   if(oldBar) oldBar.remove();
   
@@ -1672,7 +1672,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
 
-}catch(e){} */
+}catch(e){} 
     
 
 /* try{
@@ -1705,7 +1705,7 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }catch(e){} */
 
 
-try{
+/* try{
   var likeBtn = document.querySelector("like-button-view-model");
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
@@ -1766,7 +1766,7 @@ try{
     if(lc) lc.innerText = (likes && likes !== "...") ? likes : "";
     if(dc) dc.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
   }
-}catch(e){}
+}catch(e){} */
 
 
 //Volume and brightness slider 
