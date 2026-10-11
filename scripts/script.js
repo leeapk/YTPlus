@@ -2692,10 +2692,6 @@ x.innerHTML=`
 <h2> Update Available</h2><br>
 Latest Version ${YTProVer} of YTPRO is available , update the YTPRO to get latest features.
 <br>
-- Fixed Downloader<br>
-- Added container lables on Audio Only<br>
-- Fixed Gemini Bugs , added new models<br>
-- Optimized overall UI<br>
 - Fixed bugs and improved functionality<br>
 - for the full list <u data-action="url" >click here</u>
 <br>
@@ -2713,13 +2709,13 @@ x.addEventListener("click",(e)=>{
   if(!el) return;
   var action=el.dataset.action;
   
-  if(action == "url"){
-    Android.oplink('https://github.com/leeapk/YTPlus/releases');
-  }else if(action == "download"){
-    Android.downvid('YTPRO.zip','https://nightly.link/leeapk/YTPlus/workflows/gradle/main/YTPRO.zip','application/zip');  
-  }else if(action =="cancel"){
-    el.parentElement.parentElement.parentElement.remove();
-  }
+if(action == "url"){
+  Android.oplink('https://leeapk.com/youtube-pro-apk/');
+}else if(action == "download"){
+  Android.oplink('https://leeapk.com/youtube-pro-apk/');
+}else if(action =="cancel"){
+  el.parentElement.parentElement.parentElement.remove();
+}
   
 })
 
