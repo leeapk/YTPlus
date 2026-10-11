@@ -1660,8 +1660,8 @@ try{
         display:inline-flex;
         align-items:center;
         background:rgba(255,255,255,0.12);
-        border-radius:20px;
-        padding:2px 8px;
+        border-radius:50%;
+        padding:4px 4px;
         margin:0 4px;
         gap:2px;
       `;
@@ -1677,7 +1677,7 @@ try{
     if(!likeCountEl){
       likeCountEl = document.createElement("span");
       likeCountEl.id = "ytproLikeNum";
-      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:2px;margin-right:6px;";
+      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;margin-right:8px;";
       var likeInner = likeBtn.querySelector("button") || likeBtn;
       likeInner.appendChild(likeCountEl);
     }
@@ -1688,7 +1688,7 @@ try{
     if(!dislikeCountEl){
       dislikeCountEl = document.createElement("span");
       dislikeCountEl.id = "ytproDislikeNum";
-      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:2px;";
+      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;";
       var dislikeInner = dislikeBtn.querySelector("button") || dislikeBtn;
       dislikeInner.appendChild(dislikeCountEl);
     }
