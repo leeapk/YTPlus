@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 16:26 UTC
+Last Updated On: 11 Oct , 2026 , 16:32 UTC
 */
 
 
@@ -1643,35 +1643,12 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 try{
   var oldBar = document.getElementById("ytproLikeDislikeBar");
   if(oldBar) oldBar.remove();
-  var oldWrap = document.getElementById("ytproLDWrap");
   
   var likeBtn = document.querySelector("like-button-view-model");
   var dislikeBtn = document.querySelector("dislike-button-view-model");
   if(!likeBtn || !dislikeBtn) return;
 
-  if(!oldWrap){
-    var wrap = document.createElement("div");
-    wrap.id = "ytproLDWrap";
-    // FIX: flex-shrink:0; add kora hoyeche jate wrap ta chuto na hoy
-    wrap.style.cssText = "
-          display:inline-flex;
-          align-items:center;
-          gap:8px;
-          flex-shrink:0;
-          ";
-    var parent = likeBtn.parentElement;
-    
-    // FIX: Parent ke scrollable kora hoyeche jate baki button gulo hide na hoy
-    if(parent) {
-        parent.style.overflowX = "auto";
-        parent.style.flexWrap = "nowrap";
-        parent.style.scrollbarWidth = "none";
-    }
-    
-    parent.insertBefore(wrap, likeBtn);
-    wrap.appendChild(likeBtn);
-    wrap.appendChild(dislikeBtn);
-  }
+  // Wrapper and styling block removed as requested
 
   // Like count
   var likeInner = likeBtn.querySelector("button") || likeBtn;
@@ -1679,7 +1656,7 @@ try{
   if(!likeCountEl){
     likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikeNum";
-    likeCountEl.style.cssText = "font-size:14px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
+    likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
     likeInner.appendChild(likeCountEl);
   }
   likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
@@ -1690,7 +1667,7 @@ try{
   if(!dislikeCountEl){
     dislikeCountEl = document.createElement("span");
     dislikeCountEl.id = "ytproDislikeNum";
-    dislikeCountEl.style.cssText = "font-size:14px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
+    dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
     dislikeInner.appendChild(dislikeCountEl);
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
