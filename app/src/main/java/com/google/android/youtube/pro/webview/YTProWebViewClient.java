@@ -185,7 +185,7 @@ public class YTProWebViewClient extends WebViewClient {
 	@Override
 	public void onPageFinished(WebView view, String url) {
 		web.evaluateJavascript("if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {window.trustedTypes.createPolicy('default', {createHTML: (string) => string,createScriptURL: string => string, createScript: string => string, });}", null);
-		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@0d979af3455e1e150b5942df5579082a38be76bb/scripts/script.js'; document.body.appendChild(script);  })();", null);
+		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@24df1d7a40e24bd6ae2e0698056624bdade514e2/scripts/script.js'; document.body.appendChild(script);  })();", null);
 		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@a2e5a099116d61c18931e52322813716893c9ee1/scripts/bgplay.js'; document.body.appendChild(script);  })();", null);
 		web.evaluateJavascript("(function () { var script = document.createElement('script');script.type='module';script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@554047a2923ca90ee1fb83884b6c7fb956841f93/scripts/innertube.js'; document.body.appendChild(script);  })();", null);
 		
