@@ -1660,10 +1660,8 @@ try{
         display:inline-flex;
         align-items:center;
         background:rgba(255,255,255,0.12);
-        border-radius:20px 0 0 20px;
-        padding:4px 4px;
-        margin:0 4px;
-        gap:2px;
+        border-radius:35px;
+        padding:0px 16px 0px 16px;
       `;
 
       var parent = likeBtn.parentElement;
@@ -1677,7 +1675,7 @@ try{
     if(!likeCountEl){
       likeCountEl = document.createElement("span");
       likeCountEl.id = "ytproLikeNum";
-      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;margin-right:8px;";
+      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-right:4px;";
       var likeInner = likeBtn.querySelector("button") || likeBtn;
       likeInner.appendChild(likeCountEl);
     }
@@ -1688,7 +1686,7 @@ try{
     if(!dislikeCountEl){
       dislikeCountEl = document.createElement("span");
       dislikeCountEl.id = "ytproDislikeNum";
-      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;";
+      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:12px;margin-right:4px;";
       var dislikeInner = dislikeBtn.querySelector("button") || dislikeBtn;
       dislikeInner.appendChild(dislikeCountEl);
     }
