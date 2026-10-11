@@ -1,8 +1,8 @@
 /*****YTPRO*******
 Author: Mr. Lee
-Version: 4.0.0
+Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 02:57 UTC
+Last Updated On: 11 Oct , 2026 , 13:07 UTC
 */
 
 
@@ -109,6 +109,7 @@ var d="#f2f2f2";
 var dc="#fff";
 var isD=false;
 var dislikes="...";
+var likes="...";
 
 
 if(document.cookie.indexOf("f6=40000") > -1){
@@ -338,7 +339,7 @@ try{document.getElementsByClassName('ytProgressBarLineProgressBarLine')[0].appen
 
 
 /*Fetch The Dislikes*/
-async function fDislikes(url){ 
+/*async function fDislikes(url){ 
 var Url=new URL(url);
 var vID="";
 if(Url.pathname.indexOf("shorts") > -1){
@@ -358,6 +359,31 @@ dislikes=getDislikesInLocale(parseInt(jsonObject.dislikes));
 }
 }).catch(error => {});
 
+} */
+
+var dislikes="...";
+var likes="...";
+
+async function fDislikes(url){ 
+  var Url=new URL(url);
+  var vID="";
+  if(Url.pathname.indexOf("shorts") > -1){
+    vID=Url.pathname.substr(8,Url.pathname.length);
+  }
+  else if(Url.pathname.indexOf("watch") > -1){
+    vID=Url.searchParams.get("v");
+  }
+
+  fetch("https://returnyoutubedislikeapi.com/votes?videoId="+vID)
+  .then(response => response.json())
+  .then(jsonObject => {
+    if('dislikes' in jsonObject){
+      dislikes = getDislikesInLocale(parseInt(jsonObject.dislikes));
+    }
+    if('likes' in jsonObject){
+      likes = getDislikesInLocale(parseInt(jsonObject.likes));
+    }
+  }).catch(error => {});
 }
 
 
@@ -1208,6 +1234,7 @@ stopProp=false;
 navigation.addEventListener("navigate", e => {
 if(e.destination.url.indexOf("watch") > -1 || e.destination.url.indexOf("shorts") > -1){
   dislikes="...";
+  likes="...";
 fDislikes(e.destination.url);
 checkSponsors(e.destination.url);
 }
@@ -1592,7 +1619,7 @@ async function pkc(){
 if(window.location.href.indexOf("youtube.com/watch") > -1){
 
 
-try{
+/*try{
 var elm=document.getElementsByTagName("dislike-button-view-model")[0].children[0]; 
 elm.children[0].children[0].style.width="auto";
 elm.children[0].children[0].style.paddingRight="15px";
@@ -1610,7 +1637,39 @@ insertAfter(document.getElementsByClassName("slim-video-information-like-count")
 document.getElementById("diskl").innerHTML=dislikesHtml;
 }
 
+}catch(e){} */
+
+
+try{
+  // Like + Dislike count bar (next to buttons)
+  if(!document.getElementById("ytproLikeDislikeBar")){
+    var bar = document.createElement("div");
+    bar.id = "ytproLikeDislikeBar";
+    bar.style.cssText = `
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(128,128,128,0.2);border-radius:20px;
+      padding:4px 10px;margin-left:6px;font-size:13px;font-weight:600;
+    `;
+    bar.innerHTML = `
+      <span style="display:inline-flex;align-items:center;gap:4px;">
+        👍 <span id="ytproLikesCount">${likes}</span>
+      </span>
+      <span style="opacity:0.5;">|</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;">
+        👎 <span id="ytproDislikesCount">${dislikes}</span>
+      </span>
+    `;
+
+    var likeBtn = document.querySelector("like-button-view-model");
+    if(likeBtn){
+      likeBtn.parentElement.insertBefore(bar, likeBtn.nextSibling);
+    }
+  }else{
+    document.getElementById("ytproLikesCount").innerText = likes;
+    document.getElementById("ytproDislikesCount").innerText = dislikes;
+  }
 }catch(e){}
+    
 
 
 //Volume and brightness slider 
