@@ -1641,33 +1641,34 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 
 
 try{
-  // Like + Dislike count bar (next to buttons)
-  if(!document.getElementById("ytproLikeDislikeBar")){
-    var bar = document.createElement("div");
-    bar.id = "ytproLikeDislikeBar";
-    bar.style.cssText = `
-      display:inline-flex;align-items:center;gap:6px;
-      background:rgba(128,128,128,0.2);border-radius:20px;
-      padding:4px 10px;margin-left:6px;font-size:13px;font-weight:600;
-    `;
-    bar.innerHTML = `
-      <span style="display:inline-flex;align-items:center;gap:4px;">
-        👍 <span id="ytproLikesCount">${likes}</span>
-      </span>
-      <span style="opacity:0.5;">|</span>
-      <span style="display:inline-flex;align-items:center;gap:4px;">
-        👎 <span id="ytproDislikesCount">${dislikes}</span>
-      </span>
-    `;
-
-    var likeBtn = document.querySelector("like-button-view-model");
-    if(likeBtn){
-      likeBtn.parentElement.insertBefore(bar, likeBtn.nextSibling);
+  // Like count on original like button
+  var likeBtn = document.querySelector("like-button-view-model button") || document.querySelector("like-button-view-model");
+  if(likeBtn){
+    var likeCountEl = document.getElementById("ytproLikeNum");
+    if(!likeCountEl){
+      likeCountEl = document.createElement("span");
+      likeCountEl.id = "ytproLikeNum";
+      likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;";
+      likeBtn.appendChild(likeCountEl);
     }
-  }else{
-    document.getElementById("ytproLikesCount").innerText = likes;
-    document.getElementById("ytproDislikesCount").innerText = dislikes;
+    likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
   }
+
+  // Dislike count on original dislike button
+  var dislikeBtn = document.querySelector("dislike-button-view-model button") || document.querySelector("dislike-button-view-model");
+  if(dislikeBtn){
+    var dislikeCountEl = document.getElementById("ytproDislikeNum");
+    if(!dislikeCountEl){
+      dislikeCountEl = document.createElement("span");
+      dislikeCountEl.id = "ytproDislikeNum";
+      dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;";
+      dislikeBtn.appendChild(dislikeCountEl);
+    }
+    dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
+  }
+
+  var oldBar = document.getElementById("ytproLikeDislikeBar");
+  if(oldBar) oldBar.remove();
 }catch(e){}
     
 
