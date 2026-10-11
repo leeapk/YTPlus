@@ -1652,7 +1652,8 @@ try{
   if(!oldWrap){
     var wrap = document.createElement("div");
     wrap.id = "ytproLDWrap";
-    wrap.style.cssText = "
+    // Sudhu size, padding ebong border-radius subscribe button er moto kora hoyeche
+    wrap.style.cssText = `
           display:inline-flex;
           align-items:center;
           justify-content:center;
@@ -1662,7 +1663,8 @@ try{
           padding:0 16px;
           margin:0 6px;
           gap:8px;
-          ";
+          font-family:"Roboto","Arial",sans-serif;
+          `;
     var parent = likeBtn.parentElement;
     parent.insertBefore(wrap, likeBtn);
     wrap.appendChild(likeBtn);
@@ -1675,6 +1677,7 @@ try{
   if(!likeCountEl){
     likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikeNum";
+    // Font size 14px ar weight 500 (Subscribe button er moto)
     likeCountEl.style.cssText = "font-size:14px;font-weight:500;margin-left:4px;letter-spacing:0.2px;";
     likeInner.appendChild(likeCountEl);
   }
