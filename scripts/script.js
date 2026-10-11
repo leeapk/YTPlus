@@ -1652,7 +1652,17 @@ try{
   if(!oldWrap){
     var wrap = document.createElement("div");
     wrap.id = "ytproLDWrap";
-    wrap.style.cssText = "display:inline-flex;align-items:center;background:rgba(255,255,255,0.12);border-radius:20px;padding:3px 10px;margin:0 6px;gap:8px;";
+    wrap.style.cssText = "
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          background:rgba(255,255,255,0.12);
+          height:36px;
+          border-radius:18px;
+          padding:0 16px;
+          margin:0 6px;
+          gap:8px;
+          ";
     var parent = likeBtn.parentElement;
     parent.insertBefore(wrap, likeBtn);
     wrap.appendChild(likeBtn);
@@ -1665,7 +1675,7 @@ try{
   if(!likeCountEl){
     likeCountEl = document.createElement("span");
     likeCountEl.id = "ytproLikeNum";
-    likeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
+    likeCountEl.style.cssText = "font-size:14px;font-weight:500;margin-left:4px;letter-spacing:0.2px;";
     likeInner.appendChild(likeCountEl);
   }
   likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
@@ -1676,7 +1686,7 @@ try{
   if(!dislikeCountEl){
     dislikeCountEl = document.createElement("span");
     dislikeCountEl.id = "ytproDislikeNum";
-    dislikeCountEl.style.cssText = "font-size:12px;font-weight:600;margin-left:4px;letter-spacing:0.2px;";
+    dislikeCountEl.style.cssText = "font-size:14px;font-weight:500;margin-left:4px;letter-spacing:0.2px;";
     dislikeInner.appendChild(dislikeCountEl);
   }
   dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
