@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.1.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 11 Oct , 2026 , 17:57 UTC
+Last Updated On: 11 Oct , 2026 , 19:22 UTC
 */
 
 
