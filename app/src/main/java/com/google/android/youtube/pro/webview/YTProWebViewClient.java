@@ -185,7 +185,7 @@ public class YTProWebViewClient extends WebViewClient {
 	@Override
 	public void onPageFinished(WebView view, String url) {
 		web.evaluateJavascript("if (window.trustedTypes && window.trustedTypes.createPolicy && !window.trustedTypes.defaultPolicy) {window.trustedTypes.createPolicy('default', {createHTML: (string) => string,createScriptURL: string => string, createScript: string => string, });}", null);
-		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@37ef0bfe3b5a7e8069faee60f732bff19185ebd2/scripts/script.js'; document.body.appendChild(script);  })();", null);
+		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@eaa49b212cb275caac2ce65ef053ae5f5761153d/scripts/script.js'; document.body.appendChild(script);  })();", null);
 		web.evaluateJavascript("(function () { var script = document.createElement('script'); script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@main/scripts/bgplay.js'; document.body.appendChild(script);  })();", null);
 		web.evaluateJavascript("(function () { var script = document.createElement('script');script.type='module';script.src='https://cdn.jsdelivr.net/gh/leeapk/YTPlus@main/scripts/innertube.js'; document.body.appendChild(script);  })();", null);
 		
