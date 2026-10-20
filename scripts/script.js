@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.2.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 20 Oct, 2026, 10:26 UTC
+Last Updated On: 20 Oct, 2026, 10:59 UTC
 */
 
 
@@ -2010,7 +2010,6 @@ var ys=document.createElement("div");
 ys.setAttribute("id","ytproMainSDivE");
 ys.setAttribute("style",`width:50px;height:auto;position:relative;display:block;`);
 
-
 /*Download Button*/
 ysDown=document.createElement("div");
 ysDown.setAttribute("style",`height:48px;width:48px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 1px #0009);border-radius:50%;`);
@@ -2031,28 +2030,56 @@ ysHeart.addEventListener("click",function(){
   ytProHeart(ysHeart);
 });
 
-/*Dislike Button*/
-ysDislike=document.createElement("div");
-ysDislike.setAttribute("id","ytproShortsDislike");
-ysDislike.setAttribute("style",`height:auto;width:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;filter:drop-shadow(0 0 1px #0009);border-radius:50%;margin:4px 0;`);
-ysDislike.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="#fff"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg><span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;"></span>`;
-
 try{
   if(document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]){
     document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].insertBefore(ys,document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]);
     ys.appendChild(ysHeart);
     ys.appendChild(ysDown);
-    ys.appendChild(ysDislike);
   }
 }catch{}
 }
 
-/* Shorts dislike count update */
+/*Dislike Button*/
 try{
+  var likeModel = document.querySelector("like-button-view-model");
+  if(likeModel && !document.getElementById("ytproShortsDislike")){
+    var dislikeBtn = document.createElement("div");
+    dislikeBtn.id = "ytproShortsDislike";
+    dislikeBtn.style.cssText = "display:flex;flex-direction:column;align-items:center;justify-content:center;margin:6px 0;filter:drop-shadow(0 0 1px #000);cursor:pointer;";
+
+    var outlineSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" style="filter:drop-shadow(0 0 1px #000);"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2z"/><path d="M19 3v12h4V3h-4z"/></svg>`;
+    var filledSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="#fff" style="filter:drop-shadow(0 0 1px #000);"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>`;
+
+    var vid = window.location.pathname.replace("/shorts/","");
+    var list0 = [];
+    try{ list0 = JSON.parse(localStorage.getItem("ytproDislikes") || "[]"); }catch(e){ list0 = []; }
+    var isDisliked = list0.indexOf(vid) > -1;
+
+    dislikeBtn.innerHTML = (isDisliked ? filledSvg : outlineSvg) +
+      `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;"></span>`;
+
+    dislikeBtn.addEventListener("click", function(){
+      var id = window.location.pathname.replace("/shorts/","");
+      var list = JSON.parse(localStorage.getItem("ytproDislikes") || "[]");
+      var iconWrap = dislikeBtn.querySelector("svg");
+      if(list.indexOf(id) > -1){
+        list = list.filter(x => x !== id);
+        dislikeBtn.innerHTML = outlineSvg +
+          `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;">${dislikes !== "..." ? dislikes : ""}</span>`;
+      }else{
+        list.push(id);
+        dislikeBtn.innerHTML = filledSvg +
+          `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;">${dislikes !== "..." ? dislikes : ""}</span>`;
+      }
+      localStorage.setItem("ytproDislikes", JSON.stringify(list));
+    });
+
+    likeModel.parentElement.insertBefore(dislikeBtn, likeModel.nextSibling);
+  }
   var dc = document.getElementById("ytShortsDislikes");
   if(dc && dislikes !== "...") dc.innerText = dislikes;
 }catch(e){}
-
+    
 
 /*Watch The old and New URL*
 if(ytoldV != window.location.pathname){
