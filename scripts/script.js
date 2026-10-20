@@ -2,7 +2,7 @@
 Author: Mr. Lee
 Version: 4.2.0
 URI: https://github.com/leeapk/YTPlus
-Last Updated On: 20 Oct, 2026, 10:59 UTC
+Last Updated On: 20 Oct, 2026, 11:52 UTC
 */
 
 
@@ -871,7 +871,6 @@ document.getElementById("ytproUrlInput").addEventListener("keyup",searchUrl);
 
 
 
-
 var actionsList={
   follow:()=>{
     Android.oplink("https://t.me/leeapk_official");
@@ -1196,13 +1195,8 @@ addMaxButton();
 }
 }
 
-
-
 }
 },{capture:true});
-
-
-
 
 
 
@@ -1222,19 +1216,13 @@ initialDistance = null; // reset
 setTimeout(()=>{
 stopProp=false;
 },500)
-
 }
-
 }, { capture: true });
-
-
-
 
 
 navigation.addEventListener("navigate", e => {
 if(e.destination.url.indexOf("watch") > -1 || e.destination.url.indexOf("shorts") > -1){
   dislikes="...";
-  likes="...";
 fDislikes(e.destination.url);
 checkSponsors(e.destination.url);
 }
@@ -1375,10 +1363,6 @@ callbackGeminiClient.resolve = resolve;
 }
 
 
-
-
-
-
 /*Handles the reponse*/
 function handleGeminiResponse(res){
 
@@ -1401,7 +1385,7 @@ return JSON.parse(linesJSON?.[2] || "[]");
 };
 
 
-/*Modifies the timestamps , to handle them inside the video element*/
+/*Modifies the timestamps, to handle them inside the video element*/
 const modifyTimestamps=(x)=>{
 var html=x;
 var hrefs=html.match(/href="([^"]*)"/g) || [];
@@ -1608,7 +1592,6 @@ handleGeminiResponse(response);
 
 }
 
-
 var volSvg=`<svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="16" focusable="false" aria-hidden="true" style="pointer-events: none;filter:drop-shadow(0px 0px 1px black);position:absolute;top:10%"><path fill="#fff" d="M11.485 2.143 3.913 6.687A6 6 0 001 11.832v.338a6 6 0 002.913 5.144l7.572 4.543A1 1 0 0013 21V3a1.001 1.001 0 00-1.515-.857Zm6.88 2.079a1 1 0 00-.001 1.414 9 9 0 010 12.728 1 1 0 001.414 1.414 11 11 0 000-15.556 1 1 0 00-1.413 0Zm-2.83 2.828a1 1 0 000 1.415 5 5 0 010 7.07 1 1 0 001.415 1.415 6.999 6.999 0 000-9.9 1 1 0 00-1.415 0Z"></path></svg>`;
 var brtSvg=`<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16" viewBox="0 0 24 24" width="16" style="filter:drop-shadow(0px 0px 1px black);position:absolute;top:10%;"><rect fill="none" height="24" width="24"/><path fill="#fff" d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg>`;
 
@@ -1619,7 +1602,7 @@ async function pkc(){
 if(window.location.href.indexOf("youtube.com/watch") > -1){
 
 
-try {
+try{
 var elm=document.getElementsByTagName("dislike-button-view-model")[0].children[0]; 
 elm.children[0].children[0].style.width="auto";
 elm.children[0].children[0].style.paddingRight="15px";
@@ -1638,65 +1621,6 @@ document.getElementById("diskl").innerHTML=dislikesHtml;
 }
 
 }catch(e){}
-
-
-/* try{
-  var likeBtn = document.querySelector("like-button-view-model");
-  var dislikeBtn = document.querySelector("dislike-button-view-model");
-  if(!likeBtn || !dislikeBtn) return;
-
-  if(!document.getElementById("ytproSwipeStyle")){
-    var style = document.createElement("style");
-    style.id = "ytproSwipeStyle";
-    style.innerHTML = "#top-row, #actions, .ytm-top-row { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; scrollbar-width: none !important; } #top-row::-webkit-scrollbar, #actions::-webkit-scrollbar { display: none !important; }";
-    document.head.appendChild(style);
-  }
-
-  if(!document.getElementById("ytproLikeDislikeBar")){
-    
-    var bar = document.createElement("div");
-    bar.id = "ytproLikeDislikeBar";
-    bar.style.cssText = "display:inline-flex; align-items:center; gap:6px; margin:0 6px; flex-shrink:0;";
-    likeBtn.parentElement.insertBefore(bar, likeBtn);
-    bar.appendChild(likeBtn);
-    bar.appendChild(dislikeBtn);
-
-    likeBtn.style.setProperty("background", "transparent", "important");
-    likeBtn.style.setProperty("padding", "0", "important");
-    likeBtn.style.setProperty("margin", "0", "important");
-    likeBtn.style.setProperty("display", "inline-flex", "important");
-    likeBtn.style.setProperty("flex-direction", "row", "important");
-    likeBtn.style.setProperty("align-items", "center", "important");
-
-    dislikeBtn.style.setProperty("background", "transparent", "important");
-    dislikeBtn.style.setProperty("padding", "0", "important");
-    dislikeBtn.style.setProperty("margin", "0", "important");
-    dislikeBtn.style.setProperty("display", "inline-flex", "important");
-    dislikeBtn.style.setProperty("flex-direction", "row", "important");
-    dislikeBtn.style.setProperty("align-items", "center", "important");
-
-    // Like count
-    var likeCountEl = document.createElement("span");
-    likeCountEl.id = "ytproLikesCount";
-    likeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:14px; font-weight:600;";
-    likeCountEl.innerText = (likes && likes !== "...") ? likes : "";
-    likeBtn.appendChild(likeCountEl);
-
-    // Dislike count
-    var dislikeCountEl = document.createElement("span");
-    dislikeCountEl.id = "ytproDislikesCount";
-    dislikeCountEl.style.cssText = "margin-left:4px; white-space:nowrap; font-size:14px; font-weight:600;";
-    dislikeCountEl.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
-    dislikeBtn.appendChild(dislikeCountEl);
-
-  } else {
-    // Count update koro
-    var lc = document.getElementById("ytproLikesCount");
-    var dc = document.getElementById("ytproDislikesCount");
-    if(lc) lc.innerText = (likes && likes !== "...") ? likes : "";
-    if(dc) dc.innerText = (dislikes && dislikes !== "...") ? dislikes : "";
-  }
-}catch(e){} */
 
 
 //Volume and brightness slider 
@@ -1771,9 +1695,6 @@ elB.style.opacity="0";
 }
 
 
-
-
-
 if(!document.getElementById("volS")){
 document.getElementById("player-container-id").appendChild(el);
 
@@ -1800,36 +1721,20 @@ document.getElementById("volIS").style.height=vol * 100 +"%";
 },{ passive: false })
 
 
-
 //hide the element after touch endas , yes endas
 el.addEventListener("touchend",(e)=>{
 el.style.opacity="0";
 },{ passive: false });
-
 }
-
 }
-
-
   
 }catch(e){
   console.log(e)
 }
 
 
-
-
-
-
-
-
-
-
-
 /*Check If Element Already Exists*/
 if(document.getElementById("ytproMainDivE") == null){
-
-
 
 var ytproMainDivA=document.createElement("div");
 ytproMainDivA.setAttribute("id","ytproMainDivE");
@@ -1929,37 +1834,15 @@ border-left:3px solid ${d};
 </style>
 `;
 
-
-
-
-
-
 ytproMainDiv.appendChild(ytproGemini);
-
-
 ytproGemini.addEventListener("click",
 async function(){
-
-
 if(parseFloat(Android.getInfo()) < parseFloat(YTProVer)){
 updateModel();
-
 return;
 }
-
 geminiInfo();
-
-
 });
-
-
-
-
-
-
-
-
-
 
 
 /*Heart Button*/
@@ -1996,99 +1879,97 @@ ytproPIPVidElem.addEventListener("click",
 function(){
 PIPlayer(true);
 });
+
+
+
+
+
 }
 
+
+
+
+
 }else if(window.location.href.indexOf("youtube.com/shorts") > -1){
+
 
 let b = document.getElementById("brtS");
 let v = document.getElementById("volS");
 if (b) b.remove();
 if (v) v.remove();
 
+
 if(document.getElementById("ytproMainSDivE") == null){
 var ys=document.createElement("div");
 ys.setAttribute("id","ytproMainSDivE");
 ys.setAttribute("style",`width:50px;height:auto;position:relative;display:block;`);
 
+
 /*Download Button*/
 ysDown=document.createElement("div");
-ysDown.setAttribute("style",`height:48px;width:48px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 1px #0009);border-radius:50%;`);
+ysDown.setAttribute("style",`
+height:48px;width:48px;display:flex;align-items:center;justify-content:center;
+filter:drop-shadow(0 0 1px #0009);
+border-radius:50%;
+`);
 ysDown.innerHTML=downBtn.replaceAll(`${c}`,`#fff`).replace(`width="24"`,`width="30"`).replace(`height="24"`,`height="30"`);
-ysDown.addEventListener("click",function(){
-  window.location.hash="download";
+
+
+ysDown.addEventListener("click",
+function(){
+window.location.hash="download";
 });
+
 
 /*Heart Button*/
 ysHeart=document.createElement("div");
-ysHeart.setAttribute("style",`height:48px;width:48px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 1px #0009);border-radius:50%;margin-bottom:0px;`);
+ysHeart.setAttribute("style",`
+height:48px;width:48px;
+display:flex;align-items:center;justify-content:center;
+filter:drop-shadow(0 0 1px #0009);
+border-radius:50%;margin-bottom:0px;
+`);
+
+
 if(!isHeart()){
-  ysHeart.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#fff" d="M19.66 3.99c-2.64-1.8-5.9-.96-7.66 1.1-1.76-2.06-5.02-2.91-7.66-1.1-1.4.96-2.28 2.58-2.34 4.29-.14 3.88 3.3 6.99 8.55 11.76l.1.09c.76.69 1.93.69 2.69-.01l.11-.1c5.25-4.76 8.68-7.87 8.55-11.75-.06-1.7-.94-3.32-2.34-4.28zM12.1 18.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>`;
+ysHeart.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#fff" d="M19.66 3.99c-2.64-1.8-5.9-.96-7.66 1.1-1.76-2.06-5.02-2.91-7.66-1.1-1.4.96-2.28 2.58-2.34 4.29-.14 3.88 3.3 6.99 8.55 11.76l.1.09c.76.69 1.93.69 2.69-.01l.11-.1c5.25-4.76 8.68-7.87 8.55-11.75-.06-1.7-.94-3.32-2.34-4.28zM12.1 18.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>`;
 }else{
-  ysHeart.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#fff" d="M13.35 20.13c-.76.69-1.93.69-2.69-.01l-.11-.1C5.3 15.27 1.87 12.16 2 8.28c.06-1.7.93-3.33 2.34-4.29 2.64-1.8 5.9-.96 7.66 1.1 1.76-2.06 5.02-2.91 7.66-1.1 1.41.96 2.28 2.59 2.34 4.29.14 3.88-3.3 6.99-8.55 11.76l-.1.09z"/></svg>`;
+ysHeart.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#fff" d="M13.35 20.13c-.76.69-1.93.69-2.69-.01l-.11-.1C5.3 15.27 1.87 12.16 2 8.28c.06-1.7.93-3.33 2.34-4.29 2.64-1.8 5.9-.96 7.66 1.1 1.76-2.06 5.02-2.91 7.66-1.1 1.41.96 2.28 2.59 2.34 4.29.14 3.88-3.3 6.99-8.55 11.76l-.1.09z"/></svg>`;
 }
-ysHeart.addEventListener("click",function(){
-  ytProHeart(ysHeart);
+
+
+ysHeart.addEventListener("click",
+function(){
+ytProHeart(ysHeart);
 });
 
+
+
 try{
-  if(document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]){
-    document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].insertBefore(ys,document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]);
-    ys.appendChild(ysHeart);
-    ys.appendChild(ysDown);
-  }
+  
+if(document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]){
+  
+document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].insertBefore(ys,document.getElementsByClassName("ytwReelActionBarViewModelHost")[0].children[0]);
+
+ys.appendChild(ysHeart);
+ys.appendChild(ysDown);
+}
 }catch{}
-}
-
-/*Dislike Button*/
-try{
-  var likeModel = document.querySelector("like-button-view-model");
-  if(likeModel && !document.getElementById("ytproShortsDislike")){
-    var dislikeBtn = document.createElement("div");
-    dislikeBtn.id = "ytproShortsDislike";
-    dislikeBtn.style.cssText = "display:flex;flex-direction:column;align-items:center;justify-content:center;margin:6px 0;filter:drop-shadow(0 0 1px #000);cursor:pointer;";
-
-    var outlineSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" style="filter:drop-shadow(0 0 1px #000);"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2z"/><path d="M19 3v12h4V3h-4z"/></svg>`;
-    var filledSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="#fff" style="filter:drop-shadow(0 0 1px #000);"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>`;
-
-    var vid = window.location.pathname.replace("/shorts/","");
-    var list0 = [];
-    try{ list0 = JSON.parse(localStorage.getItem("ytproDislikes") || "[]"); }catch(e){ list0 = []; }
-    var isDisliked = list0.indexOf(vid) > -1;
-
-    dislikeBtn.innerHTML = (isDisliked ? filledSvg : outlineSvg) +
-      `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;"></span>`;
-
-    dislikeBtn.addEventListener("click", function(){
-      var id = window.location.pathname.replace("/shorts/","");
-      var list = JSON.parse(localStorage.getItem("ytproDislikes") || "[]");
-      var iconWrap = dislikeBtn.querySelector("svg");
-      if(list.indexOf(id) > -1){
-        list = list.filter(x => x !== id);
-        dislikeBtn.innerHTML = outlineSvg +
-          `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;">${dislikes !== "..." ? dislikes : ""}</span>`;
-      }else{
-        list.push(id);
-        dislikeBtn.innerHTML = filledSvg +
-          `<span id="ytShortsDislikes" style="font-size:12px;font-weight:600;color:#fff;margin-top:2px;text-shadow:0 0 3px #000;">${dislikes !== "..." ? dislikes : ""}</span>`;
-      }
-      localStorage.setItem("ytproDislikes", JSON.stringify(list));
-    });
-
-    likeModel.parentElement.insertBefore(dislikeBtn, likeModel.nextSibling);
-  }
-  var dc = document.getElementById("ytShortsDislikes");
-  if(dc && dislikes !== "...") dc.innerText = dislikes;
-}catch(e){}
-    
-
-/*Watch The old and New URL*
-if(ytoldV != window.location.pathname){
-fDislikes();
-ytoldV=window.location.pathname;
-}*/
 
 }
+
+
+if(!document.getElementById("ytShortsDislikes")){
+try{document.querySelectorAll('like-button-view-model')[0].children[0].children[0].children[0].insertAdjacentHTML("beforeend",`<span style="height:3px;width:3px;border-radius:50%;box-shadow:0px 0px 3px black;margin:3px;background:white">&nbsp;</span><span id="ytShortsDislikes" style="font-weight:bold;text-shadow:0px 0px 3px black;">${dislikes}</span>`);}catch{}
+}else{
+document.getElementById("ytShortsDislikes").innerHTML=dislikes;
 }
+
+}
+
+}
+
+
 setInterval(pkc,0);
 
 /*SHOW HEARTS*/
@@ -2223,35 +2104,22 @@ if (isShorts) {
   
 var dataURI = canvas.toDataURL('image/jpeg');
 
-
 if(window.location.pathname.indexOf("shorts") > -1){
 
 var vDetails={
 thumb:dataURI,
 title:document.getElementsByClassName('ytShortsVideoTitleViewModelShortsVideoTitle')[0].textContent.replaceAll("|","").replaceAll("\\","").replaceAll("?","").replaceAll("*","").replaceAll("<","").replaceAll("/","").replaceAll(":","").replaceAll('"',"").replaceAll(">","")
 };
-
 }else{
-
 var vDetails={
 thumb:dataURI,
 title:document.getElementsByClassName('slim-video-metadata-header')[0].textContent.replaceAll("|","").replaceAll("\\","").replaceAll("?","").replaceAll("*","").replaceAll("<","").replaceAll("/","").replaceAll(":","").replaceAll('"',"").replaceAll(">","")
 }
-
-/*
-var vDetails={
-thumb:[...ytplayer.config.args.raw_player_response?.videoDetails?.thumbnail?.thumbnails].pop().url,
-title:ytplayer.config.args.raw_player_response?.videoDetails?.title.replaceAll("|","").replaceAll("\\","").replaceAll("?","").replaceAll("*","").replaceAll("<","").replaceAll("/","").replaceAll(":","").replaceAll('"',"").replaceAll(">","")
-};*/
-
 }
-
 
 
 var g="16";
 (window.location.href.indexOf('youtube.com/shorts') > -1) ? g="24" : g="24" ;
-
-
 
 if(localStorage.getItem("hearts")?.indexOf(vid) > -1){
 var j=JSON.parse(localStorage.getItem("hearts") || "{}");
@@ -2269,7 +2137,6 @@ x.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${g}" height="${g}" 
 }
 
 
-
 /*Dil diya hai ya nhi diya!!*/
 function isHeart(){
 
@@ -2280,10 +2147,6 @@ return false;
 
 }
 }
-
-
-
-
 
 
 ///PIP MODE CONFIG
@@ -2330,23 +2193,6 @@ isPIP=true;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // well this is for bypassing the pause function of Youtube when video is in
 // PIP mode , its a workaround for now , until i find a proper method
 // to allow the pip mode for the video element , like chromium browsers
@@ -2362,14 +2208,6 @@ this.play().catch(() => {});
 }
 };
 
-
-
-
-
-
-
-
-
 const originalExitFullscreen = document.exitFullscreen;
 const originalRequestFullscreen = Element.prototype.requestFullscreen;
 
@@ -2377,7 +2215,6 @@ const originalRequestFullscreen = Element.prototype.requestFullscreen;
 document.exitFullscreen = function (...args) {
  if(!isPIP){ return originalExitFullscreen.apply(this, args);}
 };
-
 
 //request full screen
 Element.prototype.requestFullscreen = function (...args) {
@@ -2529,16 +2366,6 @@ return origSend.apply(this, arguments);
 };
 
 
-
-
-
-
-
-
-
-
-
-
 /****** I LOVE YOU <3 *****/
 /*YT ADS BLOCKER*/
 function adsBlock(){
@@ -2611,18 +2438,9 @@ try{document.getElementsByTagName("ytm-shorts-lockup-view-model")[x].remove();
 }catch{}
 
 }
-
 }
 }
-
-
-
-
 }
-
-
-
-
 
 //Add Maximize Gesture
 function addMaxButton(){
@@ -2651,8 +2469,6 @@ try{
 Ve.style.transform="scale(1)";
 }catch{}
 }
-
-
 }
 
 
@@ -2694,44 +2510,24 @@ elm.addEventListener("click", () => {
 
 el.appendChild(elm);
 
-
 }
-
 }
-
-
-//https://youtube.com/watch?v=SInH_fP0deQ
-
-
-
-/*Mutation Observer*/
-//as i have been developing YTPRO for almost 4 years now
-//thus it still contains the code which i used when i was a
-//totally noob in copy pasting , that time i wasn't aware of
-//plenty of things and by which i used `setInterval` instead
-//of mutation observer , i shall be optimizing the code in future
-//releases but rn only a few code blocks will be in the observer
 
 const targetNode = document.body;
 const config = { childList: true, subtree: true };
-
 const observer = new MutationObserver(() => {
 
-
 //speed
-
 extraSpeed(); 
   
 //ads Block
 adsBlock();
-
 
 //mE button
 addMaxButton();
 
 //settingsTab
 addSettingsTab();
-
 
 try{
 var video = document.getElementsByClassName('video-stream')[0];
@@ -2762,7 +2558,7 @@ x.setAttribute("style",`height:100%;width:100%;position:fixed;display:grid;align
 x.innerHTML=`
 <div style="height:auto;width:70%;padding:20px;background:rgba(0,0,0,.6);border:1px solid #888;box-shadow:0px 0px 5px black;color:white;backdrop-filter:blur(10px);border-radius:15px;margin:auto">
 <h2> Update Available</h2><br>
-Latest Version ${YTProVer} of YTPRO is available , update the YTPRO to get latest features.
+Latest Version ${YTProVer} of YTPRO is available, update the YTPRO to get latest features.
 <br>
 - Fixed bugs and improved functionality<br>
 - for the full list <u data-action="url" >click here</u>
